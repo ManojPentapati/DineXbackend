@@ -66,7 +66,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'DineX/templates',  # Add this line to include the templates directory
+            BASE_DIR / 'DineXbackend' / 'DineX' / 'templates',  # Updated path for Render deployment
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -142,7 +142,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'DineX/static',
+    BASE_DIR / 'DineXbackend' / 'DineX' / 'static',
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
