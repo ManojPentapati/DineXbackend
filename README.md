@@ -10,6 +10,9 @@ This is the Django backend for the DineX application, configured for deployment 
    - SECRET_KEY (generate a secure key)
    - DEBUG (set to False for production)
    - DATABASE_URL (if using PostgreSQL, otherwise it will use SQLite)
+   - DJANGO_SUPERUSER_USERNAME (optional, default: admin)
+   - DJANGO_SUPERUSER_EMAIL (optional, default: admin@example.com)
+   - DJANGO_SUPERUSER_PASSWORD (optional, default: adminpassword)
 
 4. Set the build command to:
    ```
@@ -40,6 +43,9 @@ pip install -r requirements.txt
 
 # Run migrations
 python DineXbackend/manage.py migrate
+
+# Create a superuser (optional)
+python DineXbackend/manage.py createsuperuser
 
 # Collect static files
 python DineXbackend/manage.py collectstatic --noinput
