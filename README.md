@@ -29,6 +29,19 @@ This is the Django backend for the DineX application, configured for deployment 
    - DEBUG: False
    - DATABASE_URL: [your database URL if using PostgreSQL]
 
+## Troubleshooting Database Issues
+
+If you encounter the "no such table: auth_user" error, it means the database migrations haven't run properly. You can manually run migrations using the Render console:
+
+1. Go to your Render dashboard
+2. Click on your service
+3. Go to the "Console" tab
+4. Run these commands:
+   ```bash
+   python manual_migrate.py
+   python create_superuser.py
+   ```
+
 ## Local Development
 
 To run locally:
