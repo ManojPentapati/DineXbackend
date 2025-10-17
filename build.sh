@@ -22,6 +22,10 @@ python DineXbackend/manage.py collectstatic --no-input
 echo "Running migrations..."
 python DineXbackend/manage.py migrate --no-input
 
+# Create superuser if it doesn't exist
+echo "Creating superuser if needed..."
+python create_superuser.py
+
 # Show migration status after migration
 echo "Migration status after migration:"
 python DineXbackend/manage.py showmigrations
