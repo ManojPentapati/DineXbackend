@@ -1,1 +1,1 @@
-web: gunicorn DineXbackend.DineXbackend.wsgi:application
+web: gunicorn DineXbackend.wsgi:application
