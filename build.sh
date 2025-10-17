@@ -25,13 +25,9 @@ python DineXbackend/manage.py showmigrations || echo "showmigrations failed"
 echo "Collecting static files..."
 python DineXbackend/manage.py collectstatic --no-input -c
 
-# Apply any outstanding database migrations
-echo "Running migrations..."
-python DineXbackend/manage.py migrate --no-input || echo "migrate failed"
-
-# Create superuser if it doesn't exist
-echo "Creating superuser if needed..."
-python create_superuser.py || echo "create_superuser failed"
+# Apply migrations using our custom command
+echo "Ensuring migrations are applied..."
+python DineXbackend/manage.py ensure_migrations
 
 # Show migration status after migration
 echo "Migration status after migration:"
