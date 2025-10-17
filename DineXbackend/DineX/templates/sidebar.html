@@ -1,0 +1,19 @@
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h3>DineX Menu</h3>
+        <button class="sidebar-close" id="sidebarClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="{% url 'homepage' %}" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="{% url 'product-cards' %}"><i class="fas fa-box"></i> Products</a></li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+        <li><a href="#"><i class="fas fa-users"></i> Customers</a></li>
+        <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        {% endif %}
+    </ul>
+</div>

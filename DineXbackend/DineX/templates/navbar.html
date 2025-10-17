@@ -1,0 +1,42 @@
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="navbar-left">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="{% url 'homepage' %}" class="navbar-brand">DineX</a>
+        </div>
+        
+        <div class="navbar-center">
+            <div class="navbar-links">
+                <a href="{% url 'homepage' %}"><i class="fas fa-home"></i> Home</a>
+                <a href="{% url 'product-cards' %}"><i class="fas fa-box"></i> Products</a>
+                <button class="btn-cart">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <div class="profile-dropdown">
+                    <button class="profile-button" id="profileButton">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="profile-menu" id="profileMenu">
+                        <div class="profile-header">
+                            <i class="fas fa-user-circle profile-icon"></i>
+                            <div class="profile-info">
+                                <span class="profile-name">{{ user.username }}</span>
+                                <span class="profile-email">{{ user.email }}</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>
