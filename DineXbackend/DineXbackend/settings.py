@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',  # Add this for CORS support
-    'DineX',
+    'DineXbackend.DineX',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'DineXbackend.urls'
+ROOT_URLCONF = 'DineXbackend.DineXbackend.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'DineXbackend.wsgi.application'
+WSGI_APPLICATION = 'DineXbackend.DineXbackend.wsgi.application'
 
 
 # Database
