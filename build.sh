@@ -11,21 +11,28 @@ python --version
 echo "Django version:"
 python -m django --version
 
-# Show migration status
+# Show current directory and files
+echo "Current directory:"
+pwd
+echo "Files in current directory:"
+ls -la
+
+# Show migration status before migration
 echo "Current migration status:"
-python DineXbackend/manage.py showmigrations
+python DineXbackend/manage.py showmigrations || echo "showmigrations failed"
 
 # Convert static asset files
-python DineXbackend/manage.py collectstatic --no-input
+echo "Collecting static files..."
+python DineXbackend/manage.py collectstatic --no-input -c
 
 # Apply any outstanding database migrations
 echo "Running migrations..."
-python DineXbackend/manage.py migrate --no-input
+python DineXbackend/manage.py migrate --no-input || echo "migrate failed"
 
 # Create superuser if it doesn't exist
 echo "Creating superuser if needed..."
-python create_superuser.py
+python create_superuser.py || echo "create_superuser failed"
 
 # Show migration status after migration
 echo "Migration status after migration:"
-python DineXbackend/manage.py showmigrations
+python DineXbackend/manage.py showmigrations || echo "showmigrations failed"
