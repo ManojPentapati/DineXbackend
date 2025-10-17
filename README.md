@@ -18,7 +18,7 @@ This is the Django backend for the DineX application, configured for deployment 
 
 5. Set the start command to:
    ```
-   gunicorn DineXbackend.wsgi:application
+   gunicorn DineXbackend.DineXbackend.wsgi:application
    ```
 
 6. Add the following environment variables in your Render dashboard:
